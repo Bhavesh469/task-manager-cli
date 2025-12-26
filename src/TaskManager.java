@@ -49,5 +49,19 @@ public class TaskManager {
 } 
 
     static void showTasks() {}
-    static void deleteTask() {}
+    static void deleteTask() {
+    showTasks();
+    if (tasks.isEmpty()) return;
+
+    System.out.print("Enter task number to delete: ");
+    int index = sc.nextInt();
+    sc.nextLine();
+
+    if (index > 0 && index <= tasks.size()) {
+        tasks.remove(index - 1);
+        System.out.println("Task deleted.");
+    } else {
+        System.out.println("Invalid number.");
+    }
+}
 }
