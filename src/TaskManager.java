@@ -38,6 +38,19 @@ public class TaskManager {
     // Features will be implemented by team members
     static void addTask() {}
     static void showTasks() {
+    static void addTask() { 
+
+    System.out.print("Enter task: "); 
+
+    String task = sc.nextLine(); 
+
+    tasks.add(task); 
+
+    System.out.println("Task added successfully."); 
+
+} 
+
+static void showTasks() {
     if (tasks.isEmpty()) {
         System.out.println("No tasks available.");
         return;
@@ -46,7 +59,19 @@ public class TaskManager {
     for (int i = 0; i < tasks.size(); i++) {
         System.out.println((i + 1) + ". " + tasks.get(i));
     }
-}
+}    static void deleteTask() {
+    showTasks();
+    if (tasks.isEmpty()) return;
 
-    static void deleteTask() {}
+    System.out.print("Enter task number to delete: ");
+    int index = sc.nextInt();
+    sc.nextLine();
+
+    if (index > 0 && index <= tasks.size()) {
+        tasks.remove(index - 1);
+        System.out.println("Task deleted.");
+    } else {
+        System.out.println("Invalid number.");
+    }
+}
 }
