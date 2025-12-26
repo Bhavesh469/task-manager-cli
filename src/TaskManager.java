@@ -36,7 +36,18 @@ public class TaskManager {
     }
 
     // Features will be implemented by team members
-    static void addTask() {}
+    static void addTask() { 
+
+    System.out.print("Enter task: "); 
+
+    String task = sc.nextLine(); 
+
+    tasks.add(task); 
+
+    System.out.println("Task added successfully."); 
+
+} 
+
     static void showTasks() {}
     static void deleteTask() {}
 }
